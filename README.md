@@ -1,6 +1,6 @@
 # QtQuickPlotScene
 
-This is a fork from the original QtQuickPlotscene
+This is a fork from the original QtQuickPlotscene. The goal of this fork is to try and cater to real-time plotting
 
 QtQuickPlotScene is a collection of QtQuick items for data visualization in Qt6.
 
