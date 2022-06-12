@@ -16,12 +16,11 @@ Item {
         x: (itemRect.x - viewRect.x) * _xFactor
         y: root.height - height - (root.itemRect.y - root.viewRect.y) * _yFactor
 
-        onChildrenChanged: Qt.callLater(function () {
+        onChildrenChanged:  {
             // Anchor children to container content item
-            // TODO: Accessing children within onChildrenChanged crashes in Windows-Release. Why?
             for (var i=0; i < children.length; ++i) {
                 children[i].anchors.fill = contentItem;
             }
-        });
+        }
     }
 }

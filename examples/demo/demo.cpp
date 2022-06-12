@@ -4,11 +4,10 @@
 #include <QtQuick/QSGRendererInterface>
 #include <QtQuickControls2/QQuickStyle>
 
-
 int main(int argc, char *argv[])
 {
   QGuiApplication app(argc, argv);
-  QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
+  //QQuickWindow::setGraphicsApi(QSGRendererInterface::OpenGL);
   QQuickStyle::setStyle("Material");
   QQmlApplicationEngine engine("qrc:/demo.qml");
   return app.exec();

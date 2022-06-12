@@ -24,6 +24,14 @@ public:
   Q_SIGNAL void coordinatesChanged(const QVector<qreal>& coordinates);
   Q_SIGNAL void closedChanged(bool closed);
 
+  Q_INVOKABLE void append(qreal x, qreal y){
+        m_coordinates.append(x);
+        m_coordinates.append(y);
+        m_coordinatesModified = true;
+        update();
+        Q_EMIT coordinatesChanged(m_coordinates);
+    };
+
   [[nodiscard]] QQmlListProperty<QPointF> points();
   void setViewRect(const QRectF& viewRect);
   void setLogY(bool logY);

@@ -6,9 +6,13 @@ import QtQuickPlotScene as QtQuickPlotScene
 ApplicationWindow {
     id: approot
     visible: true
-    title: "QtQuickPlotScene Demo"
     minimumWidth: 800
     minimumHeight: 600
+    onBeforeRendering:{
+
+        update()
+
+    }
 
     // Demonstration pages
     ListModel {
@@ -33,6 +37,7 @@ ApplicationWindow {
         }
     }
     Loader {
+
         anchors.fill: parent
         source: demoPages.get(pageSelector.currentIndex).source
     }

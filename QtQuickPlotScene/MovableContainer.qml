@@ -3,10 +3,12 @@ import QtQuickPlotScene as QtQuickPlotScene
 
 QtQuickPlotScene.Container {
     id: root
+    property double infinity22: 99999999999999999999999999
     property bool resizable: true
     property bool movable: true
     property bool aspectFixed: false
-    property rect maxItemRect: Qt.rect(-Infinity, -Infinity, Infinity, Infinity)
+    property rect maxItemRect: Qt.rect(-infinity22, -infinity22, infinity22, infinity22)
+
 
     Item {
         id: frame
@@ -31,10 +33,10 @@ QtQuickPlotScene.Container {
                 let itemY = pressedRect.y + (frame.pressedCoords.y - pNow.y) * root.viewRect.height / root.height;
                 // Restrict new position movement to max rect
                 const maxRect = root.maxItemRect;
-                if (maxRect.width !== Infinity) {
+                if (maxRect.width !== infinity22) {
                     itemX = Math.min(maxRect.x + maxRect.width - pressedRect.width, Math.max(maxRect.x, itemX));
                 }
-                if (maxRect.height !== Infinity) {
+                if (maxRect.height !== infinity22) {
                     itemY = Math.min(maxRect.y + maxRect.height - pressedRect.height, Math.max(maxRect.y, itemY));
                 }
                 // Apply
@@ -91,7 +93,7 @@ QtQuickPlotScene.Container {
                     const maxRect = root.maxItemRect;
                     delta.x = Math.max(maxRect.x, delta.x + pressedRect.x) - pressedRect.x;
                     if (root.aspectFixed) { delta.y = -delta.x; }
-                    if (maxRect.height !== Infinity) {
+                    if (maxRect.height !== infinity22) {
                         delta.y = Math.min(maxRect.y + maxRect.height, pressedRect.y + pressedRect.height + delta.y) - (pressedRect.y + pressedRect.height);
                     }
                     if (root.aspectFixed) { delta.x = -delta.y; }
@@ -140,7 +142,7 @@ QtQuickPlotScene.Container {
                     const maxRect = root.maxItemRect;
                     delta.y = Math.max(maxRect.y, delta.y + pressedRect.y) - pressedRect.y;
                     if (root.aspectFixed) { delta.x = -delta.y; }
-                    if (maxRect.width !== Infinity) {
+                    if (maxRect.width !== infinity22) {
                         delta.x = Math.min(maxRect.x + maxRect.width, pressedRect.x + pressedRect.width + delta.x) - (pressedRect.x + pressedRect.width);
                     }
                     if (root.aspectFixed) { delta.y = -delta.x; }

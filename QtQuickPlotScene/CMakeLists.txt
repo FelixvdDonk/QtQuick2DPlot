@@ -17,7 +17,7 @@ target_link_libraries(QtQuickPlotScene PRIVATE
 
 qt_add_qml_module(QtQuickPlotScene
     URI QtQuickPlotScene
-    VERSION 1.0
+    VERSION 1.1
     SOURCES
         "plotgroup.hpp"
         "plotgroup.cpp"
