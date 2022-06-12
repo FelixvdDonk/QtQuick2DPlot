@@ -1,5 +1,7 @@
 # QtQuickPlotScene
 
+This is a fork from the original QtQuickPlotscene. The goal of this fork is to try and cater to real-time plotting
+
 QtQuickPlotScene is a collection of QtQuick items for data visualization in Qt6.
 
 > **_NOTE:_** This project is a work-in-progress continuation of [QmlPlotting](https://github.com/pwuertz/qmlplotting). Some functionality is still missing and requires porting from Qt5 to Qt6.
